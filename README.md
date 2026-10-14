@@ -1,23 +1,26 @@
 # D-LENDER — Loan Management System
 
-A full-stack loan management application built to support loan tracking, disbursement management, repayment monitoring, and financial reporting.
+A full-stack web application for loan tracking, disbursement management, repayment monitoring, and financial reporting.
+
+**Built with React, TypeScript, Node.js, Express, and MySQL.**
 
 ## Overview
 
-D-LENDER is a web-based loan management system developed with React, TypeScript, Node.js, Express, and MySQL. It provides a dashboard for monitoring loan activity and tracking outstanding balances and repayments.
+D-LENDER is a web-based loan management system designed to help users monitor loan activity, track repayments, and review outstanding balances through a centralized dashboard.
 
-## Features
+The project demonstrates full-stack development, REST API integration, dashboard analytics, responsive interface design, and automated build checks using GitHub Actions.
 
-- **Dashboard Analytics:** View total disbursed loans, outstanding balances, collections, and pending applications.
+## Key Features
+
+- **Dashboard Analytics:** Monitor total disbursed loans, outstanding balances, monthly collections, and pending applications.
 - **Loan Management:** Organize and track loan records.
 - **Loan Disbursement:** Support the recording of loan disbursement activity.
 - **Repayment Tracking:** Record repayments and monitor outstanding balances.
 - **Financial Reporting:** Display key loan performance metrics.
-- **Dark Mode:** Switch between light and dark themes, with the selected theme persisted across page refreshes.
+- **Dark Mode:** Switch between light and dark themes, with the selected theme preserved across page refreshes.
 - **REST API:** Connect the frontend to the backend through API endpoints.
-- **Continuous Integration:** GitHub Actions automatically runs frontend linting, frontend production builds, and backend TypeScript compilation on pushes and pull requests targeting `main`.
+- **Automated CI:** Run frontend linting, frontend production builds, and backend TypeScript compilation through GitHub Actions.
 
-## Technology Stack
 ## Application Screenshots
 
 ### Dashboard
@@ -31,21 +34,27 @@ D-LENDER is a web-based loan management system developed with React, TypeScript,
 ### Repayment Management
 
 ![D-LENDER Repayment Management](docs/screenshots/repayment.png)
-**Frontend**
+
+## Technology Stack
+
+### Frontend
+
 - React
 - TypeScript
 - Vite
 - Tailwind CSS
 - Recharts
 
-**Backend**
+### Backend
+
 - Node.js
 - Express
 - TypeScript
 - MySQL
 - mysql2
 
-**Development and Delivery**
+### Development and Quality Assurance
+
 - Git and GitHub
 - GitHub Actions
 - ESLint
@@ -66,6 +75,11 @@ d-lender/
 │   ├── src/
 │   ├── package.json
 │   └── package-lock.json
+├── docs/
+│   └── screenshots/
+│       ├── dashboard.png
+│       ├── dashboard-dark-mode.png
+│       └── repayment.png
 ├── .gitignore
 └── README.md
 ```
@@ -74,7 +88,11 @@ d-lender/
 
 ### Prerequisites
 
-Install Node.js, npm, and MySQL before running the application.
+Install the following before running the application:
+
+- Node.js and npm
+- MySQL
+- Git
 
 ### 1. Clone the repository
 
@@ -92,76 +110,104 @@ npm ci
 
 ### 3. Install backend dependencies
 
-Open another terminal from the project root, then run:
+Open a second terminal from the project root and run:
 
 ```bash
 cd backend
 npm ci
 ```
 
-### 4. Configure environment variables
+### 4. Configure the environment
 
-Create the necessary local environment configuration files for the frontend and backend. Set the backend database connection details and any required application secrets using your local configuration and the project's existing environment variable names.
+Create the required local environment configuration files for the frontend and backend.
 
-Do not commit `.env` files, database passwords, API keys, or other secrets to GitHub.
+Configure the backend's MySQL connection and any required application settings using the environment variable names expected by the existing source code.
 
-### 5. Start the application
+Do not commit `.env` files, database credentials, API keys, or other secrets to GitHub.
 
-Start the backend from the `backend` directory:
+Ensure the required database and schema are available before using features that depend on MySQL.
 
-```bash
-npm run dev
-```
+### 5. Start the backend
 
-Start the frontend from the `frontend` directory in a separate terminal:
+From the `backend` directory, run:
 
 ```bash
 npm run dev
 ```
 
-Open the local frontend URL displayed by Vite in your terminal.
+### 6. Start the frontend
 
-> Database setup must be completed before using features that require MySQL. Consult the project's backend configuration for the exact database name, schema, and environment variable requirements.
+In a separate terminal, from the `frontend` directory, run:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed by Vite in your browser.
 
 ## Quality Checks
 
-Run the frontend checks:
+### Frontend
+
+Run from the `frontend` directory:
 
 ```bash
-cd frontend
 npm ci
 npm run lint
 npm run build
 ```
 
-Run the backend build:
+### Backend
+
+Run from the `backend` directory:
 
 ```bash
-cd backend
 npm ci
 npm run build
 ```
 
-These checks are also automated through GitHub Actions.
-
 ## Continuous Integration
 
-The GitHub Actions workflow is located at `.github/workflows/ci.yml`.
+D-LENDER uses GitHub Actions for continuous integration.
 
-It runs on pushes and pull requests targeting `main`, and supports manual execution. The workflow checks frontend code quality, builds the frontend, and compiles the backend.
+The workflow is defined in:
 
-## Security Notes
+`.github/workflows/ci.yml`
 
-- Keep credentials and environment files out of version control.
+It runs on pushes and pull requests targeting the `main` branch and can also be started manually.
+
+The workflow performs the following checks:
+
+- Checks out the repository.
+- Sets up Node.js.
+- Installs dependencies using `npm ci`.
+- Runs ESLint on the frontend.
+- Builds the frontend for production.
+- Compiles the backend TypeScript code.
+
+View the repository and workflow:
+
+- **GitHub Repository:** https://github.com/classik7/d-lender
+- **GitHub Actions:** https://github.com/classik7/d-lender/actions
+
+The current workflow validates code quality and builds. Production deployment is not yet configured.
+
+## Security Considerations
+
+- Keep secrets and environment files out of version control.
 - Use environment variables for sensitive configuration.
-- Configure authentication, authorization, input validation, and production database access appropriately before deploying to production.
+- Validate user input on the backend.
+- Apply appropriate authentication and authorization controls.
+- Secure database access and credentials before production deployment.
 
 ## Project Status
 
-D-LENDER is under active development. Production hosting and automated deployment are separate from the current CI workflow.
+D-LENDER is under active development. The frontend and backend build checks have previously passed in GitHub Actions. Production hosting and automated deployment remain separate steps.
 
 ## Author
 
 **Awelewa Johnson Oluwaseun**
 
-GitHub: https://github.com/classik7
+GitHub: [classik7](https://github.com/classik7)
+
+Project Repository: [D-LENDER](https://github.com/classik7/d-lender)
