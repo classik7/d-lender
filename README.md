@@ -18,7 +18,19 @@ D-LENDER is a web-based loan management system developed with React, TypeScript,
 - **Continuous Integration:** GitHub Actions automatically runs frontend linting, frontend production builds, and backend TypeScript compilation on pushes and pull requests targeting `main`.
 
 ## Technology Stack
+## Application Screenshots
 
+### Dashboard
+
+![D-LENDER Dashboard](docs/screenshots/dashboard.png)
+
+### Dashboard — Dark Mode
+
+![D-LENDER Dashboard Dark Mode](docs/screenshots/dashboard-dark-mode.png)
+
+### Repayment Management
+
+![D-LENDER Repayment Management](docs/screenshots/repayment.png)
 **Frontend**
 - React
 - TypeScript
